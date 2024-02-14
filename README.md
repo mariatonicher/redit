@@ -8,6 +8,6 @@ TODO:
 - [x ] initialize connection to mongodb
 - [x ] implement endpoint to create a subredit/community
 - [x ] implement endpoint to create a post (in a subredit)
-- [ ] implement endpoint to list a subredit's posts
+- [x ] implement endpoint to list a subredit's posts
 - [ ] implement endpoint to get the comments for a post
 - [ ] implement endpoint to edit a post
