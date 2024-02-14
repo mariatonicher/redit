@@ -62,6 +62,17 @@ app.post("/subredits/:id", async (req, res) => {
   }
 });
 
+// implement endpoint to list a subredit's posts //https://sparkbyexamples.com/mongodb/mongodb-db-collection-find-with-examples/ //https://www.w3schools.com/nodejs/nodejs_mongodb_find.asp
+app.get("/subredits", async (req, res) => {
+  try {
+    const result = await db.collection("subredits").find().toArray();
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+  //return result
+});
+
 //connection url
 async function start(app) {
   //use conect method to connect to the server
