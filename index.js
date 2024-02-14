@@ -40,8 +40,29 @@ app.post("/subredits", async (req, res) => {
   }
 });
 
-//connection url
+//implement endpoint to create a post (in a subredit) https://sparkbyexamples.com/mongodb/mongodb-add-a-new-field-to-all-documents/?utm_content=cmp-true
+app.post("/subredits/:id", async (req, res) => {
+  const subredditId = req.params.id;
+  const { name, description } = req.body;
 
+  try {
+    // const posts = db.collection("posts");
+    await db.collection("subredits").insertMany([
+      {
+        name: "Jimmy",
+        description: "1111111111111111111111",
+      },
+      {
+        Name: "Peter",
+        description: "1111111111111111111111",
+      },
+    ]);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+//connection url
 async function start(app) {
   //use conect method to connect to the server
   await client.connect();
